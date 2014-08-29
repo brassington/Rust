@@ -23,7 +23,7 @@ fn main() {
     println!("You guessed: {}", num);
     match compare(num, secret_number) {
       Less    => println!("Too small!"),
-      Greater =>  println!("Too bid!"),
+      Greater =>  println!("Too big!"),
       Equal   =>  { 
         println!("You got it!");
         return; 

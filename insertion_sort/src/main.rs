@@ -14,7 +14,7 @@
   };
 }*/
 
-fn insertion_sort(array: &mut [int]) {
+/*fn insertion_sort(array: &mut [int]) {
   for (index, element) in array.iter().enumerate() {
     let mut j = index;
     while j >= 0 && array[j] > *element {
@@ -23,9 +23,9 @@ fn insertion_sort(array: &mut [int]) {
     };
     array[j + 1] = *element;
   };
-}
+}*/
 
-/*// std::cmp::Ord returns an ordering between `self` and `other` values
+// std::cmp::Ord returns an ordering between `self` and `other` values
 // thus, we have a mutable array whose order we can rearrange
 fn insertion_sort<T: std::cmp::Ord>(array: &mut [T]) {
   for i in range(1, array.len()) {
@@ -35,7 +35,7 @@ fn insertion_sort<T: std::cmp::Ord>(array: &mut [T]) {
       j = j-1;
     };
   };
-}*/
+}
 
 fn main() {
   let mut array = [31i, 41, 59, 26, 41, 58, 60];

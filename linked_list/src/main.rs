@@ -1,7 +1,6 @@
-
 // need to allocate List in heap memory using <Box> since
 // we don't know how much memory to allocate to it at compile time
-enum Node {
+pub enum Node {
   // the usage of Cons is not special; it can be called something else 
   Cons(uint, Box<Node>),   // Cons represents the node and its pointer to the next node in the linked list
   Nil
@@ -54,7 +53,8 @@ impl Node {
   }
   // checks to see if the linked list contains a cycle
   fn has_cycle(&self) -> bool {
-    
+    // since each Node is an owned piece of memory on the heap, it is impossible 
+    // to have multiple pointers point to the same Node 
   }
 }
 
