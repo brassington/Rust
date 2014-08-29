@@ -1,3 +1,5 @@
+// This linked list implementation is credited to Jonathon Reem: github.com/reem
+
 use std::sync::Arc
 
 // A functional, shareable, persistent singly linked list
