@@ -1,6 +1,5 @@
 // This linked list implementation is credited to Jonathon Reem: github.com/reem
-
-use std::sync::Arc
+use std::sync::Arc;
 
 // A functional, shareable, persistent singly linked list
 // This implementation is threadsafe that could have cycles
@@ -12,7 +11,7 @@ pub enum List<T> {
   Nil
 }
 
-imply<T> List<T> {
+impl<T> List<T> {
   // Construct a new empty list
   pub fn new() -> List<T> { Nil }
 }
@@ -22,7 +21,7 @@ impl<T: Send + Sync> List<T> {
   pub fn singleton(val: T) -> List<T> { Cons(val, Arc::new(Nil)) }
 
   // Get the head of the list
-  pub fn get_head(&self) -> Option<&T> {
+  pub fn head(&self) -> Option<&T> {
     match *self {
       Nil => None,
       Cons(ref head, _) => Some(head)
@@ -30,11 +29,11 @@ impl<T: Send + Sync> List<T> {
   }
 
   // Get the tail of the list
-  pub fn get_tail(&self) -> Option<&T> {
+  pub fn tail(&self) -> Option<Arc<List<T>>> {
     match *self {
       Nil => None,
       // tail is an owned reference, so we need to clone the tail in order to reference it
-      Cons(_, ref head) => Some(tail.clone()) 
+      Cons(_, ref head) => Some(self.tail.clone()) 
     }
   }
 
