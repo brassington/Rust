@@ -52,10 +52,10 @@ impl Node {
     }
   }
   // checks to see if the linked list contains a cycle
-  fn has_cycle(&self) -> bool {
+/*  fn has_cycle(&self) -> bool {
     // since each Node is an owned piece of memory on the heap, it is impossible 
     // to have multiple pointers point to the same Node 
-  }
+  }*/
 }
 
 fn main() {
