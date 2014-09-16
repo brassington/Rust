@@ -15,6 +15,12 @@ impl Node {
   fn append_to_front(self, elem: uint) -> Node {  // we use non-referenced `self` here because we're lending self it out so we can alter it
     Cons(elem, box self)
   }
+/*  fn remove_from_tail(self) -> Node {
+    match self {
+      Cons(_, ref tail) => let *tail = Nil,
+      Nil => println!("No tail to remove from!")
+    }
+  }*/
   // checks if the specified node exists in the list
   fn contains(&self, elem: uint) -> bool {   
     match *self {
