@@ -1,0 +1,5 @@
+[package]
+
+name = "rock-paper_scissors"
+version = "0.0.1"
+authors = ["Sean Chen <skypemaster007@gmail.com>"]
