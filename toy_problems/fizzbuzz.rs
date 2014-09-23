@@ -1,14 +1,31 @@
-// a more compact implementation
+// A simpler version, no helper methods required
 fn main() {
-  for num in range(1i, 101) {
-    println!("{:s}",
-      if div_by_fifteen(num) { "FizzBuzz".to_string() }
-      else if div_by_three(num) { "Fizz".to_string() }
-      else if div_by_five(num) { "Buzz".to_string() }
-      else { num.to_string() }
-    );
-  }
+
+    fn fizz_buzz(n: int) {
+        for i in range(1i, n) {
+            match i {
+                i if (i % 15 == 0) => { println!("FizzBuzz") }
+                i if (i % 3 == 0) => { println!("Fizz") }
+                i if (i % 5 == 0) => { println!("Buzz") }
+                _ => { println!("{:d}", i)}
+            }
+        }
+    }
+
+    fizz_buzz(100);
 }
+
+// a more compact implementation
+// fn main() {
+//   for num in range(1i, 101) {
+//     println!("{:s}",
+//       if div_by_fifteen(num) { "FizzBuzz".to_string() }
+//       else if div_by_three(num) { "Fizz".to_string() }
+//       else if div_by_five(num) { "Buzz".to_string() }
+//       else { num.to_string() }
+//     );
+//   }
+// }
 
 /* // a less compact implementation
 fn main() {  
